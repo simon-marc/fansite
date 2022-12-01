@@ -1,0 +1,379 @@
+/*Body*/
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Poppins,sans-serif;
+    color: #1a2f42;
+}
+
+/*Header et Navbar*/
+
+.navbar {
+    padding: 20px 0 10px 0;
+    box-shadow: 0 0 20px 0 #999;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: black;
+}
+
+.navbar .logo img {
+    width: 25%;
+    margin-bottom: 25px;
+}
+
+.navbar .nav_links ul {
+    display: flex;
+    top: 10px;
+}
+
+.navbar .nav_links ul li {
+    margin: 0 25px;
+    font-weight: 700;
+}
+
+.navbar .nav_links ul li.active a  {
+    font-size: 17px;
+    color: goldenrod;
+    font-weight: 700;
+}
+
+.navbar .menu_hamburger {
+    display: none;
+    position: absolute;
+    top : 50px;
+    right:40px;
+    width:35px
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 900px) {
+
+    .navbar {
+        padding: 150px 0 10px 0;
+        display: flex;
+        justify-content: space-around;
+        background-color: white;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav_links {
+        top:0;
+        left:0;
+        position: absolute;
+        background-color: rgba(255,255,255,0.20);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(7px);
+        margin-left: -100%;
+        transition: all 0.7s ease;
+    }
+
+    .nav_links.mobile_menu {
+        margin-left: 0;
+    }
+
+    .nav_links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav_links ul li {
+        margin: 25px 0
+    }
+
+    .main_history h1 {
+        display: flex;
+        justify-content: center ;
+        margin-bottom: 20px;
+        margin-top: 45px;
+    }
+}
+
+/*Page History*/
+
+.main_history {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: black;
+}
+
+.main_history h2 {
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 20px;
+}
+
+.main_history p {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 50px 30px 50px;
+    box-sizing: border-box;
+}
+
+.vidéos_interview {
+    background-color: goldenrod;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 60px;
+}
+
+.interview_légendes {
+    display: flex;
+    justify-content: center;
+    background-color: goldenrod;
+    padding-top: 30px;
+}
+
+.vidéos_interview .video1 {
+    width:900px;
+    height:400px;
+    margin-top: 40px;
+}
+
+.présentation_rappeurs {
+    max-width: 100%;
+    font-weight: bold;
+    text-decoration: underline;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 19px ;
+    padding-left: 100px;
+    background-color: goldenrod;
+    padding-bottom: 150px;
+}
+
+/*Page Hall Of Fame*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:black;
+}
+
+body {
+    background: white;
+    font-family: "Lato", sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/*Cartes*/
+
+h1 {
+    font-weight: bold;
+    color: blue;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    padding-top: 90px;
+}
+
+h1 span {
+    display: block;
+}
+
+h1 span:nth-child(1) {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 100px;
+    margin: 80px 0;
+    background: white;
+    padding-bottom: 90px;
+}
+
+.card-wrapper {
+    position: relative;
+    min-height: 350px;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.86,0,0.07,1);
+    color: white;
+    font-weight: bold;
+}
+
+.card-front img {
+    width: 70%;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+    background: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-wrapper:nth-child(even) .card-front {
+    background-color: #1a2f42;
+}
+
+.card-front p {
+    font-size: 25px;
+    line-height: 35px;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.card-price  {
+    font-size: 45px;
+}
+
+.card-back {
+    background: #1a2f42;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper:nth-child(even) .card-back {
+    background-color: goldenrod;
+}
+
+.card-back a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    transition:
+            background-color 0.3s ease-out,
+            color 0.3s ease-out;
+}
+
+.card-wrapper:nth-child(odd) .card-back a:hover {
+    background-color: #1a2f42;
+    color: #fff;
+}
+
+.card-wrapper:nth-child(even) .card-back a:hover {
+    background-color: #ed5d34;
+    color: #fff;
+}
+
+/*Formulaire de Contact*/
+
+
+.titre_contact {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 60px;
+}
+
+.contact-box {
+    margin-top: 90px;
+    width: 700px;
+    height: 600px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px 0 #999;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px;
+}
+
+.input-field {
+    width: 600px;
+    height: 50px;
+    margin-top:20px;
+    padding-left: 10px;
+    padding-right:10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+}
+
+.textarea-field {
+    height: 150px;
+    padding-top: 10px;
+}
+
+.btn {
+    border-radius: 20px;
+    color: black;
+    margin-top:18px;
+    padding: 10px;
+    background-color: goldenrod ;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/*Footer*/
+
+footer {
+    color: white;
+    font-weight: bold;
+    background-color: white;
+    padding: 4px;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+}
